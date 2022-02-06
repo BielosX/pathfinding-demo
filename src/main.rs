@@ -29,6 +29,8 @@ fn main() {
     canvas.clear();
     canvas.present();
     'running: loop {
+        canvas.set_draw_color(Color::BLACK);
+        canvas.clear();
         for event in event_pump.poll_iter() {
             match event {
                 Event::Quit { .. } => {}
@@ -41,5 +43,6 @@ fn main() {
                 _ => {}
             }
         }
+        canvas.present();
     }
 }
